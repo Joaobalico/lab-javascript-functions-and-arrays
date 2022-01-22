@@ -11,14 +11,14 @@ function maxOfTwoNumbers(num1, num2) {
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord(arr) {
-  if (arr.length === 0) {
-    return null
+function findLongestWord(arrOfWords) {
+  if (arrOfWords.length === 0) {
+    return null;
   }
   let word ='';
-  for (let i = 0; i < arr.length; i++) {
-    if (word.length < arr[i].length) {
-    word = arr[i];
+  for (let i = 0; i < arrOfWords.length; i++) {
+    if (word.length < arrOfWords[i].length) {
+    word = arrOfWords[i];
     }
   }
   return word;
@@ -66,14 +66,14 @@ function averageNumbers(arr) {
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength(strArr) {
+function averageWordLength(arrOfWords) {
   if (arrOfWords.length === 0) {
     return null;
   } else {
       let total = 0;
       for (let i = 0; i < arrOfWords.length; i++) {
           total += arrOfWords[i].length;
-          return total;
+          console.log(total);
       }
       return total / arrOfWords.length;
     }
@@ -97,16 +97,28 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(arrOfWords) {
+  const newArr = [... new Set(arrOfWords)];
+  if (arrOfWords.length === 0) {
+    return null;
+  }
+  return newArr;
+}
 
 
 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
-
-
+function doesWordExist(arrOfWords, word) {
+  if (arrOfWords.length === 0) {
+    return null;
+  } else if (arrOfWords.includes(word) === true) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -123,9 +135,22 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(arrOfWords, word) {
+  /* const indices = [];
+  const element = word;
+  const idx = arrOfWords.indexOf(element); */
+  if (arrOfWords.length === 0) {
+    return 0;
+  }
+  while (idx != -1) {
+    indices.push(idx);
+    idx = arrOfWords.indexOf(element, idx + 1);
+  }
+  const count = idx;
+  return count;
+}
 
-
+/* console.log(howManyTimes(wordsCount, 'matter')) */
 
 // Iteration #8: Bonus
 const matrix = [
