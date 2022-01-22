@@ -136,9 +136,9 @@ const wordsCount = [
 ];
 
 function howManyTimes(arrOfWords, word) {
-  /* const indices = [];
-  const element = word;
-  const idx = arrOfWords.indexOf(element); */
+  let indices = [];
+  let element = word;
+  let idx = arrOfWords.indexOf(element);
   if (arrOfWords.length === 0) {
     return 0;
   }
@@ -146,11 +146,9 @@ function howManyTimes(arrOfWords, word) {
     indices.push(idx);
     idx = arrOfWords.indexOf(element, idx + 1);
   }
-  const count = idx;
+  let count = indices.length;
   return count;
 }
-
-/* console.log(howManyTimes(wordsCount, 'matter')) */
 
 // Iteration #8: Bonus
 const matrix = [
